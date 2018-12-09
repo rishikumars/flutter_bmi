@@ -28,7 +28,7 @@ class BmiState extends State<Bmi> {
          _bmiResult = double.parse(_weightController.text) /
           (double.parse(_heightController.text) *
               double.parse(_heightController.text));
-          if(age>21){
+          if(age>=21){
             if(_bmiResult<18.5)health="Under Weight";
             else if(_bmiResult>=18.5 && _bmiResult<24.9)health="Healthy Weight";
             else if(_bmiResult>25 && _bmiResult<29.9)health="Over Weight";
