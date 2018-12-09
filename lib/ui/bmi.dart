@@ -20,7 +20,14 @@ class BmiState extends State<Bmi> {
 
   double calPercentile(double zScore) {
     double score=zScore.abs();
-    return n[(score*100).round()];
+    double thispercentile;
+    if (zScore < -3.09) return 0.1;
+    if (zScore > 3.09) return 99.9;
+    thispercentile= n[(score*100).round()];
+
+    if (zScore >= 0) { return thispercentile; }
+    else { return 100 - thispercentile; }
+
   }
 
   void _calculate(int age) {
